@@ -1,22 +1,16 @@
-name: Parallel App Build Workflow 
-on: [push] 
+name: Sequential App Build Workflow 
+on: [push]
+
 jobs: 
-    build: 
+    sequential-build: 
         runs-on: ubuntu-latest 
+
         steps: 
-            - run: echo "Build Application" 
-    integration-testing: 
-        needs: build 
-        runs-on: ubuntu-latest 
-        steps: 
-            - run: echo "Integration Testing" 
-    functional-testing: 
-        needs: build 
-        runs-on: ubuntu-latest 
-        steps: 
-            - run: echo "Functional Testing" 
-    deploy: 
-        needs: [integration-testing, functional-testing]
-        runs-on: ubuntu-latest 
-        steps: 
-            - run: echo "Deploy Application"
+            - name: Build Application 
+              run: echo "Build Application" 
+            - name: Integration Testing 
+              run: echo "Integration Testing" 
+            - name: Functional Testing 
+              run: echo "Functional Testing" 
+            - name: Deploy Application 
+              run: echo "Deploy Application"
