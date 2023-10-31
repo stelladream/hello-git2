@@ -1,4 +1,4 @@
-아래는 Markdown로 작성된  sample 입니다.
+# 아래는 Markdown로 작성된  sample 입니다.
 
 
 <!-- ABOUT THE PROJECT -->
